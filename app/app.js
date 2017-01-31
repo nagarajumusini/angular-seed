@@ -5,7 +5,8 @@ angular.module('myApp', [
   'ui.router',
   'metaservice',
   'myApp.view1',
-  'myApp.view2'
+  'myApp.view2',
+  'myApp.party'
 ]).
 config(['$locationProvider', '$urlRouterProvider', '$stateProvider', function($locationProvider, $urlRouterProvider, $stateProvider) {
   //$locationProvider.hashPrefix('!');
