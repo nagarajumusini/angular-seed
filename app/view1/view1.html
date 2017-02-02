@@ -1,1 +1,4 @@
-<p>This is the partial for view 1.</p>
+
+<ul>
+<li ng-repeat="item in data" ui-sref="myapp.view2({ bId: 1 })">{{$index}}{{item.bId}}</li>
+</ul>

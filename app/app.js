@@ -5,10 +5,20 @@ angular.module('myApp', [
   'ui.router',
   'metaservice',
   'myApp.view1',
-  'myApp.view2',
   'myApp.party'
 ]).
-config(['$locationProvider', '$urlRouterProvider', '$stateProvider', function($locationProvider, $urlRouterProvider, $stateProvider) {
+config(['$locationProvider', '$urlRouterProvider', '$stateProvider', '$provide', function($locationProvider, $urlRouterProvider, $stateProvider, $provide) {
+  
+  $provide.decorator("$exceptionHandler", ["$delegate", "$log","$injector", function($delegate, $log, $injector) {
+    return function (exception, cause) {
+      var $rootScope = $injector.get('$rootScope');
+      $rootScope.Errors = $rootScope.Errors || [];
+      $rootScope.Errors.push({ exception: exception, cause: cause });
+      //console.log({ exception: exception, cause: cause });
+      //$delegate(exception, cause);
+   };
+  }]);
+
   //$locationProvider.hashPrefix('!');
 
   //$urlRouterProvider.otherwise('/otherwise');

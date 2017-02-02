@@ -17,8 +17,12 @@
 </head>
 <body>
 
-
-
+  <div ng-show="Errors && Errors.length">
+    <h2>Exceptions </h2>
+    <ul>
+      <li ng-repeat="error in Errors">{{error.exception.message}}</li>
+    </ul>
+  </div>
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
@@ -35,7 +39,6 @@
   <script src="app.js"></script>
   <script src="metaService.js"></script>
   <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
   <script src="party/party.js"></script>
 </body>
 </html>

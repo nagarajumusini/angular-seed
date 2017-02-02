@@ -16,4 +16,19 @@ angular.module('myApp.view1', ['ui.router'])
 	// Configure Meta Tags and Title
 	$rootScope.metaservice = MetaService;
     $rootScope.metaservice.set("view2 | angular-seed","desc","blah blah");
+
+
+    $rootScope.data =[
+    {
+    	bId: 1,
+    	bName: 'first'
+    },
+    {
+    	bId: 2,
+    	bName: 'second'
+    },
+    {
+    	bId: 3,
+    	bName: 'third'
+    }];
 }]);
